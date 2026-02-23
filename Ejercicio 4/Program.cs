@@ -12,3 +12,66 @@ string persistencia = Console.ReadLine();
 Console.WriteLine("Número de usuarios afectados");
 int usuariosafect = int.Parse(Console.ReadLine());
 
+string severidad = "baja";
+string respuesta = "revisión constante";
+
+switch (tipoincidente)
+{
+    case 1:
+        if (persistencia == "s")
+        {
+            if (activoafectado == 2 || activoafectado == 3)
+            {
+                severidad = "Critica";
+                respuesta = "Aislar todo inmediatamente";
+            }
+            else
+            {
+                severidad = "alta ";
+                respuesta = "Formatear";
+            }
+        }
+        break;
+    case 2:
+        if (usuariosafect > 50)
+        {
+            severidad = "media";
+            respuesta = "Reinicio masivo";
+        }
+        break;
+    case 4:
+        if (datoscomprom == 4)
+        {
+            severidad = "Critica";
+            respuesta = "emergencia legal y finaciera";
+        }
+        else if (datoscomprom == 3)
+        {
+            severidad = "alta";
+            respuesta = "privacidad afectada";
+        }
+        break;
+}
+switch (activoafectado)
+{
+    case 3: 
+        if (severidad == "baja")
+        {
+            severidad = "media";
+            respuesta = "revisar integridad de datos";
+        }
+        break;
+    case 4:
+        if (usuariosafect > 500)
+        {
+            severidad = "critica";
+        }
+        else if (usuariosafect > 100)
+        {
+            if (severidad == "baja")
+            {
+                severidad = "media";
+            }
+        }break;
+}
+
