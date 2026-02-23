@@ -75,3 +75,6 @@ switch (activoafectado)
         }break;
 }
 
+Console.WriteLine("Resultados evaluados");
+Console.WriteLine($"Severidad final: {severidad}");
+Console.WriteLine($"respuesta sugerida: {respuesta}");
